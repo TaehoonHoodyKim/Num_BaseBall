@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "mafia-game-bd3c8"
+  }
+}

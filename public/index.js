@@ -1,3 +1,4 @@
+var email_id;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -9,7 +10,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     if(user != null){
 
-      var email_id = user.displayName;
+      //console.log(currentUser.displayName);
+      
+      
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 
     }
@@ -31,7 +34,9 @@ function googleLogin(){
   firebase.auth().signInWithPopup(provider).then(function(result) {
      var token = result.credential.accessToken;
      var user = result.user;
-   
+     user.displayName = document.getElementById("email_field").value;
+     email_id = user.displayName;
+     //email_id = document.getElementById("email_field").value;
      console.log(token)
      console.log(user)
   }).catch(function(error) {
@@ -59,7 +64,7 @@ function googleLogin(){
 
 function anonLogin(){
   firebase.auth().signInAnonymously().then(function() {
-
+    email_id = document.getElementById("email_field").value;
      console.log('Logged in as Anonymous!')
      
      }).catch(function(error) {

@@ -1,17 +1,24 @@
 <html>
 <head>
   <title>Firebase Login</title>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div id="login_div" class="main-div">
-    <h3>Firebase Web login Example</h3>
+    <h3>Firebase Web login</h3>
     <input type="email" placeholder="Email..." id="email_field" />
     <input type="password" placeholder="Password..." id="password_field" />
 
-    <button onclick="login()">Login to Account</button>
+    <button onclick="login()">Login with Google</button>
+    <button onclick="login()">Login with Email</button>
   </div>
 
   <div id="user_div" class="loggedin-div">
@@ -21,7 +28,7 @@
   </div>
 
 
-
+  
   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -35,5 +42,7 @@
     };
     firebase.initializeApp(config);
   </script>
+  <script src="index.js"></script>
+
 </body>
 </html>

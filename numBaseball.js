@@ -46,11 +46,13 @@ w_form.addEventListener('submit', function call_back(event){
     var ans = text_input.value;
     console.log(ans,ans_arr,ans==ans_arr.join(''));
     if( ans == ans_arr.join('')){
-        w_result.textContent='HomeRun!!! you tried'+w_tryNum+' times'
+        w_result.textContent='HomeRun!!! you tried';
         text_input.value='';
+        text_input.focus();
         pickNum();
         w_tryNum=0;
     }else{
+        //w_tryNum+=1;
         // if user didn't get the answer, then 
         // show the hints to the user.
         var user_ansArr = ans.split('');
@@ -62,6 +64,14 @@ w_form.addEventListener('submit', function call_back(event){
                 value of the strike, ball  for making hints.
         */
        console.log('wrong answer!', user_ansArr);
+       if(w_tryNum>10){
+            w_result.textContent='You failed over 10 times! answer is : '+ans_arr.join(',');
+            w_trynum =0;
+            text_input.value='';
+            text_input.focus();
+            pickNum();
+
+       }else{
         for( var i = 0 ; i< 4; i+=1){
 
             if(Number(user_ansArr[i]) == ans_arr[i]){
@@ -75,6 +85,8 @@ w_form.addEventListener('submit', function call_back(event){
             text_input.value='';
             text_input.focus();
         }
+       }
+        
     }
 });
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Number Baseball</title>
+    <!-- *******************************************************************************************
+       * TODO(DEVELOPER): Paste the initialization snippet from:
+       * Firebase Console > Overview > Add Firebase to your web app. *
+       ***************************************************************************************** -->
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.6.0/firebaseui.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAv7DQXJCKiX8RpGbtWP_hhtLvprowK9OU",
+        authDomain: "mafia-game-bd3c8.firebaseapp.com",
+        databaseURL: "https://mafia-game-bd3c8.firebaseio.com",
+        projectId: "mafia-game-bd3c8",
+        storageBucket: "mafia-game-bd3c8.appspot.com",
+        messagingSenderId: "330855808685"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.6.0/firebaseui.css" />
+    <script type="text/javascript"></script>
+  </head>
+  <body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <div class="jumbotron text-center">
+        <h3>Sign in to play Number Baseball!</h3>
+    </div>
+    <!-- <h3>Sign in to play Number Baseball!</h3> -->
+    &nbsp;
+    <div id="firebaseui-auth-container"></div>
+    <script src ="index.js"></script>
+  </body>
+</html>
